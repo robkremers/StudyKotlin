@@ -97,9 +97,10 @@ class User (
      */
 
     companion object {
+        // 2:29:09:
         // Definition of constants
         // Must be declared after the constructors (I don't make the rules)
-       // Now the constant is scoped to be a singleton.
+        // Now the constant is scoped to be a singleton.
         const val MAX_AGE: Int = 18
 
         val users = mutableListOf<User>()

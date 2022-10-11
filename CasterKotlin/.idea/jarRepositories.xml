@@ -17,6 +17,11 @@
       <option name="url" value="https://office.bkwi.nl/nexus/repository/public/" />
     </remote-repository>
     <remote-repository>
+      <option name="id" value="mvnrepo.k94.kvk.nl-artifacts" />
+      <option name="name" value="mvnrepo.k94.kvk.nl-artifacts" />
+      <option name="url" value="https://nexus.kvk.nl/repository/public/" />
+    </remote-repository>
+    <remote-repository>
       <option name="id" value="central" />
       <option name="name" value="Maven Central repository" />
       <option name="url" value="https://repo1.maven.org/maven2" />
@@ -25,6 +30,11 @@
       <option name="id" value="jboss.community" />
       <option name="name" value="JBoss Community repository" />
       <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="Central Repository" />
+      <option name="url" value="https://nexus.kvk.nl/repository/nexus-core/" />
     </remote-repository>
     <remote-repository>
       <option name="id" value="central" />

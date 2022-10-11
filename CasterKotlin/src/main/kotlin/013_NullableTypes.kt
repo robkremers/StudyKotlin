@@ -13,7 +13,7 @@ fun main() {
 
     var age: Int? = 32
 
-    var person: Person? = Person("Foo")
+    var person: Person? = Person("Foo", "Bar")
 
     person = null
     

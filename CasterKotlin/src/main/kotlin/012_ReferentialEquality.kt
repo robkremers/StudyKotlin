@@ -12,7 +12,7 @@ fun main() {
     println(a === b) // true
 
     // Now instance of Classes are created. At least what we are used to.
-    var person1 = Person("Donn")
-    var person2 = Person("Donn")
+    var person1 = Person("Donn", "Felker")
+    var person2 = Person("Donn", "Felker")
     println(person1 == person2) // false
 }
