@@ -6,6 +6,12 @@ fun main() {
     val others = listOf("Kiwi", "Watermelon")
 
     // Combining the immutable Lists.
+    val result = mine.plus(theirs).plus(others)
+    println(result)
+
+    result.minus(theirs)
+    println(result.minus(theirs))
+    println(result.minus("Kiwi"))
 
 
 }
