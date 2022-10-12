@@ -9,7 +9,6 @@ package classes
  */
 //class User constructor(var firstName: String = "", var lastName: String = "" ) {
 class User (
-
     var firstName: String = "",
     var lastName: String = "Smith",
     var isPlatinum: Boolean) {

@@ -142,3 +142,9 @@ An abstract class is implicitly declared as open.
 If you mark a declaration as **private**, it will only be visible inside the file that contains the declaration. 
 If you mark it as **internal**, it will be visible everywhere in the same module.
 
+### Non-null asserted:
+
+non-null asserted: use this: !!. Example: stuff!!
+- Only safe (?.) or non-null asserted (!!.) calls are allowed on a nullable receiver of type String?
+
+

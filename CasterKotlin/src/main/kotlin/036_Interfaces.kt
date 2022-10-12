@@ -5,7 +5,7 @@ fun main() {
 
     /**
      * Main purpose of interfaces:
-     * Allows to decouple an application and make for multi-purpose use.
+     * Allows to decouple an application and make for multipurpose use.
      */
     // Get this from a constructor.
     val fileSystem: FileSystem = getFileSystem()
