@@ -4,7 +4,7 @@ fun main() {
     // 6:08:29 Filtering and Transforming Maps
     // 6:16:30 Using mapNotNull on a Map
 
-    var items = mutableMapOf(
+    val items = mutableMapOf(
         "NY" to "New York",
         "NJ" to "New Jersey",
         "NM" to "New Mexico",
@@ -48,7 +48,7 @@ fun main() {
     result = items.filterValues { it.lowercase().contains("n") }
     println(result) // {NY=New York, NJ=New Jersey, NM=New Mexico, CA=California, WA=Washington, OR=Oregon, NV=Nevada, CT=Connecticut, AZ=Arizona, MN=Minnesota, NE=Nebraska}
 
-    var filterValues = items.filterValues { it.lowercase().contains("f") }
+    val filterValues = items.filterValues { it.lowercase().contains("f") }
         .map {
             it.value.substring(0, 3)
         }
@@ -62,22 +62,15 @@ fun main() {
 //    val (key1, value1) = Map.entry("key", "value")
 //    items.map { (key, value) -> findValueInWebService( Map.entry(key, value)) }
 
-    var itemsFromWebService = items.map(::findValueInWebService)
+    val itemsFromWebService = items.map(::findValueInWebService)
     println(itemsFromWebService)
 
 //    mapEntry: Map.Entry<String, String> =
 
-    var hashMap: HashMap<String, String> = HashMap<String, String>()
+    val hashMap: HashMap<String, String> = HashMap<String, String>()
     hashMap.put("bla", "at")
     println(hashMap)
 
-    var itemsFromWebService2 = items.map { (key, value) ->
-        {
-            var itemMap = mutableMapOf<String, String>(key to value)
-            findValueInWebService2(itemMap)
-        }
-    }
-    println(itemsFromWebService2)
 }
 
 fun findValueInWebService(entry: Map.Entry<String, String>): Map.Entry<String, String>? {
@@ -86,15 +79,4 @@ fun findValueInWebService(entry: Map.Entry<String, String>): Map.Entry<String, S
     } else {
         return entry
     }
-}
-
-fun findValueInWebService2(entry: MutableMap<String, String>): MutableMap<String, String>? {
-    for (key in entry.keys) {
-        if (key.contains("N")) {
-            return null
-        } else {
-            return entry
-        }
-    }
-    return null
 }
