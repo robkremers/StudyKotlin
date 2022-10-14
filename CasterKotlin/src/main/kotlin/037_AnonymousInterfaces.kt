@@ -31,13 +31,13 @@ fun main() {
     // Accessing the method On
     button.clickListener.onClick()
 
-    val map = Map()
-    map.clickListener = object : OnClickListener {
-        override fun onClick() {
-            println("Clicked via an anonymous interface implementation of interface OnClickListener for a Map.")
-        }
-    }
-    map.click()
+//    val map = Map<Any>()
+//    map.clickListener = object : OnClickListener {
+//        override fun onClick() {
+//            println("Clicked via an anonymous interface implementation of interface OnClickListener for a Map.")
+//        }
+//    }
+//    map.click()
 
 }
 
@@ -66,4 +66,4 @@ open abstract class View {
 
 class Button : View()
 class Image : View()
-class Map : View()
+class Map<T, U> : View()

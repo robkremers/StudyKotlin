@@ -49,7 +49,7 @@ fun main() {
      */
 
     /**
-     * Because of it's nature it is recommended that in case of large Lists a Sequence will be better performing.
+     * Because of its nature it is recommended that in case of large Lists a Sequence will be better performing.
      * Check this site:
      * https://winterbe.com/posts/2018/07/23/kotlin-sequence-tutorial/
      */

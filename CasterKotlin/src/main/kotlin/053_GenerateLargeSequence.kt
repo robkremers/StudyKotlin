@@ -5,15 +5,18 @@ fun main() {
     // 6:20:22 Generating Large Sequences
     // 6:23:11 Measuring Performance
 
+    runListAsSequence()
+
+}
+
+fun runList() {
     // Take a good look at the Sequences.kt library to understand measureNanoTime().
 
     lateinit var list: List<Int>
 
     // Note that 'measure'is the function defined below.
     measure {
-        list = generateSequence(1) { it + 1 }
-            .take(50_000_000)
-            .toList()
+        list = getListOfCustomers()
     }
 
     measure {
@@ -25,12 +28,36 @@ fun main() {
 
     // Resulting time to calculate: 2559 milliseconds
     /**
-     * 1958 milliseconds
+     * 2012 milliseconds
+    479 milliseconds
     2.50000005E7
     Done.
-    536 milliseconds
      */
 }
+
+fun runListAsSequence() {
+
+    lateinit var list: List<Int>
+    measure {
+        list = getListOfCustomers()
+    }
+    var average:Double = 0.0
+    measure {
+        average = list
+            .asSequence() // Using this will result in running a List as a sequence.
+            .filter { it % 3 == 0 }
+            .average();
+    }
+    println(average)
+    println("Done.")
+}
+/**
+ * 1927 milliseconds
+309 milliseconds
+2.50000005E7
+Done.
+ So definitely an improvement in performance.
+ */
 
 /**
  * The parameter block will be a function and has no Unit. It's basically a void.
@@ -45,4 +72,10 @@ fun measure(block: () -> Unit) {
     val nanoTime = measureNanoTime(block)
     val millis = TimeUnit.NANOSECONDS.toMillis(nanoTime)
     println("$millis milliseconds")
+}
+
+fun getListOfCustomers(): List<Int> {
+    return generateSequence(1) { it + 1 }
+        .take(50_000_000)
+        .toList()
 }

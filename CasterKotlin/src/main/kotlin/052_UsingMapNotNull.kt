@@ -37,13 +37,13 @@ fun main() {
 
     // Find out later
     // Now I have a List<MutableMaap<String, String>. Not really what I intended.
-//    val itemsMapNotNull = items.mapNotNull { (key, value) ->
-//        {
-//            findValueInWebService3Here(key, value)
-//        }
-//    }
+    val itemsMapNotNull = items.mapNotNull { it ->
+        {
+            findValueInWebService3Here(it.key, it.value)
+        }
+    }
 //        .flatMap {  }
-//    println(itemsMapNotNull)
+    println(itemsMapNotNull)
 }
 
 fun findValueInWebServiceHere(entry: Map.Entry<String, String>): Map.Entry<String, String>? {
