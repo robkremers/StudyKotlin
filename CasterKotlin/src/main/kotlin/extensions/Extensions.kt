@@ -1,4 +1,7 @@
+@file:JvmName("StringExtensions")
 package extensions
+
+// 9:07:50 @JvmName Annotation
 
 /**
  * Purpose:

@@ -1,40 +1,59 @@
 fun main() {
     // 8:34:29 Lambdas as Function Parameters
 
-    // val lambdaName: (InputType) -> ReturnType = { arguments:InputType -> body }
+    /**
+     * References:
+     * - https://www.baeldung.com/kotlin/lambda-expressions
+     */
+
+    /**
+     * val lambdaName: (InputType) -> ReturnType = { arguments:InputType -> body }
+     *
+     * The last statement of the lambda forms the return type, if any.
+     * Kotlin can deduce the return type based on that statement.
+     * However occasionally that is not possible and we must explicitly declare the type
+     * for the lambda.
+      */
+
+
 //    lineLogger {
 //        println("message 1")
 //        println("message 2")
 //        println("message 3")
 //    }
 
-//    repeater(3) {
-//        println("Hello")
-//    }
+    repeater(3) {
+        println("Hello")
+    }
 
-//    repeaterInt(5) { index ->
-//        println(index)
-//        if (index < 3) {
-//            println("Hello")
-//        } else {
-//            println("Goodbye")
-//        }
-//    }
-//}
+    repeaterInt(5) { index ->
+        println(index)
+        if (index < 3) {
+            println("Hello")
+        } else {
+            println("Goodbye")
+        }
+    }
 
     derbyAnnouncer { player: String -> "$player is a great asset to the team" }
 }
 
 /**----------------The functions-----------------------------*/
 
-fun repeater(nrTimes: Int, block: () -> Unit) {
-    repeat(nrTimes) { block() }
+/**
+ * lambda: the lambda function that will be executed nrTimes.
+ * For a precise understanding see the code of function repeat().
+ */
+fun repeater(nrTimes: Int, lambda: () -> Unit) {
+    repeat(nrTimes) { lambda() }
 }
 
 /**
  * The index starts with value '0' and each time the repeat is executed
  * the index will be set one higher. See the repeat functionality.
- * The block will not return anything: it is Unit (java: void).
+ * The block has as input value nrTimes and will not return anything: it is Unit (java: void).
+ *
+ * Note that 'block' is just a name. Could be anything, e.g. 'lambda'.
  */
 fun repeaterInt(nrTimes: Int, block: (Int) -> Unit) {
     repeat(nrTimes) { index -> block(index) }
